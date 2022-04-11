@@ -4,9 +4,9 @@ import numpy as np
 
 
 class Model(object):
-	def __init__(self, date):
+	def __init__(self, date, unit, bearing, fault):
 		self.date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
-		self.filepath = os.path.join(os.path.abspath(os.getcwd()), 'state-matrix', self.define_filepath())
+		self.filepath = os.path.join(os.path.abspath(os.getcwd()), 'state-matrix', unit, bearing, fault, self.define_filepath())
 	
 	def define_filepath(self):
 		first_day_of_the_week =  self.date - timedelta(days=self.date.weekday() % 7)

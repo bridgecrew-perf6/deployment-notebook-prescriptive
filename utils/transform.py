@@ -32,7 +32,7 @@ class TransformData(object):
         sensors =  data.index.tolist()[1:]
         actuals = []
         for d in data.tolist()[1:]:
-            if type(d) == int or type(d) == float:
+            if type(d) == np.int or type(d) == np.int_ or type(d) == np.float64 or type(d) == np.float:
                 actuals.append(np.around(d, 6))
             else:
                 actuals.append(np.nan)
